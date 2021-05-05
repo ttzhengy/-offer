@@ -6,6 +6,7 @@ import java.util.Stack;
 将stack2视作队列头，取出数据，
 当stack2出完，才能将stack1中的数据弹出，压入到stack2
  */
+
 public class JZ5 {
     public static void main(String[] args) {
         JZ5Solution queue = new JZ5Solution();
