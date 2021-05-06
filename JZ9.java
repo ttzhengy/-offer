@@ -7,9 +7,9 @@ import java.util.Stack;
 当stack2出完，才能将stack1中的数据弹出，压入到stack2
  */
 
-public class JZ5 {
+public class JZ9 {
     public static void main(String[] args) {
-        JZ5Solution queue = new JZ5Solution();
+        JZ9Solution queue = new JZ9Solution();
         for (int i = 0; i < 5; i++) {
             queue.push(i);
         }
@@ -19,7 +19,7 @@ public class JZ5 {
     }
 }
 
-class JZ5Solution {
+class JZ9Solution {
     Stack<Integer> stack1 = new Stack<Integer>();
     Stack<Integer> stack2 = new Stack<Integer>();
 
