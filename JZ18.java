@@ -9,15 +9,15 @@ import java.util.*;
 遍历所有节点，交换所有非叶子节点的左右子树
  */
 
-public class JZ18 {
+public class JZ27 {
     public static void main(String[] args) {
-        JZ18Solution jz18Solution = new JZ18Solution();
-        JZ18Solution.TreeNode treeRoot = jz18Solution.createTreeRoot();
-        jz18Solution.Mirror(treeRoot);
+        JZ27Solution jz27Solution = new JZ27Solution();
+        JZ27Solution.TreeNode treeRoot = jz27Solution.createTreeRoot();
+        jz27Solution.Mirror(treeRoot);
     }
 }
 
-class JZ18Solution {
+class JZ27Solution {
     /**
      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
      *
