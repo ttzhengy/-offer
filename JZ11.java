@@ -14,7 +14,8 @@ mid=（left+right）/2，令区间端点等于mid
  */
 public class JZ11 {
     public static void main(String[] args) {
-        int[] arr = {2,3,4,5,6,1};
+        int[] arr = {2,3,4,5,6};
+        // int[] arr = {1,1,1,1,1,0,1};
         System.out.println(new JZ11Solution().minNumberInRotateArray(arr));
     }
 }
@@ -32,13 +33,13 @@ class JZ11Solution {
         int mid = (left+right)/2;
 
         // 极端情况
-        if (array[mid]==array[left] && array[right]==array[left]){
-            int min = array[0];
-            for (int i = 1; i < array.length; i++) {
-                min = (min>array[i]?array[i]:min);
-            }
-            return min;
-        }
+        // if (array[mid]==array[left] && array[right]==array[left]){
+        //     int min = array[0];
+        //     for (int i = 1; i < array.length; i++) {
+        //         min = (min>array[i]?array[i]:min);
+        //     }
+        //     return min;
+        // }
 
         // 递归做法
         // if (right-left==1){
@@ -51,12 +52,14 @@ class JZ11Solution {
         // }
 
         // 循环做法
-        while (right-left!=1){
+        while (right>left){
             mid = (left+right)/2;
             if (array[mid]>array[right]){
-                left=mid;
-            }else {
-                right=mid;
+                left=mid+1;     // 因为此时array[mid]必然不是最小值，所以可以直接跳过
+            }else if (array[mid]<array[right]){
+                right=mid;      // 此时不能排除array[mid]是最小值
+            }else {     // 没有旋转，或者多个重复元素的极端情况
+                right--;
             }
         }
         return array[right];
