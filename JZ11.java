@@ -12,14 +12,14 @@ NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
 mid=（left+right）/2，令区间端点等于mid
 结束循环条件为right-left==1
  */
-public class JZ6 {
+public class JZ11 {
     public static void main(String[] args) {
         int[] arr = {2,3,4,5,6,1};
-        System.out.println(new JZ6Solution().minNumberInRotateArray(arr));
+        System.out.println(new JZ11Solution().minNumberInRotateArray(arr));
     }
 }
 
-class JZ6Solution {
+class JZ11Solution {
     public int minNumberInRotateArray(int [] array) {
         if (array.length==0){
             return 0;
