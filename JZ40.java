@@ -11,15 +11,16 @@
  */
 
 import java.util.Arrays;
+import java.util.PriorityQueue;
 
 
 public class JZ40{
 }
 
-class JZ40Solution {
+class JZ40Solution1 {
     public int[] getLeastNumbers(int[] arr, int k) {
         if (k==0 || arr.length==0){
-            return null;
+            return new int[0];
         }
         return partitionArray(arr,0,arr.length-1,k-1);
     }
@@ -50,5 +51,33 @@ class JZ40Solution {
         }
         arr[left] = pivot;
         return left;
+    }
+}
+
+class JZ40Solution{
+    public int[] getLeastNumbers(int[] arr, int k) {
+        if (k==0 || arr.length==0){
+            return new int[0];
+        }
+        return partitionArray(arr,k);
+    }
+
+    public int[] partitionArray(int[] arr,int k){
+        PriorityQueue<Integer> pq = new PriorityQueue<>((v1, v2) -> v2 - v1);
+        for (int i : arr) {
+            if (pq.size()<k){
+                pq.offer(i);
+            }else if (i<pq.peek()) {
+                pq.poll();
+                pq.offer(i);
+            }
+        }
+
+        int[] res = new int[pq.size()];
+        int index = 0;
+        for (int a : pq) {
+            res[index++] = a;
+        }
+        return res;
     }
 }
